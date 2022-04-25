@@ -16,6 +16,44 @@
                 border: red solid;
             }
         </style> -->
+
+        <style type="text/css">
+                #topingbin {
+                  transform: rotate(90deg);
+                  width: 270px;
+                  margin-top: 100px;
+                }
+
+                #topingbin .item {
+                  transform: rotate(-90deg);
+                }
+
+                #topingbin .owl-nav {
+                  display: flex;
+                  justify-content: space-between;
+                  position: absolute;
+                  width: 100%;
+                  top: calc(50% - 33px);
+                }
+
+                #slaybin {
+                  transform: rotate(90deg);
+                  width: 270px;
+                  margin-top: 100px;
+                }
+
+                #slaybin .item {
+                  transform: rotate(-90deg);
+                }
+
+                #slaybin .owl-nav {
+                  display: flex;
+                  justify-content: space-between;
+                  position: absolute;
+                  width: 100%;
+                  top: calc(50% - 33px);
+                }
+        </style>
         <!-- animate__animated animate__hinge -->
     </head>
     <body>
@@ -24,8 +62,9 @@
                 <div class="col-md-12" style="height: 80vh;">
                 <div class="inalan">
                     <div class="row">
+                        <!-- toping -->
                         <div class="col-3 col-md-3">
-                            <div class="owl-carousel owl-theme">
+                            <div id="topingbin" class="owl-carousel owl-theme">
                                 <div class="item">
                                     <img src="https://www.w3schools.com/images/colorpicker2000.png" class="img-fluid" onclick="iponi('https://www.w3schools.com/images/colorpicker2000.png','img3')">
                                 </div>
@@ -45,8 +84,9 @@
                             <img src="./1.png" id="img2" style="position:absolute;  min-width: 40vw;height: 80vh; max-width: 40vw;max-height: 80vh;">
                             <img src="./3.png" id="img3" style="position:absolute;  min-width: 40vw;height: 80vh; max-width: 20%;max-height: 50%; object-fit: scale-down;">
                         </div>
+                        <!-- selai -->
                         <div class="col-md-3 col-3">
-                            <div class="owl-carousel owl-theme">   
+                            <div id="slaybin" class="owl-carousel owl-theme">   
                                 <div class="item">
                                     <img src="./JUMP/Red_Color.jpg" class="img-fluid" onclick="iponi('./JUMP/Red_Color.jpg','img1')">
                                 </div>
@@ -60,7 +100,8 @@
                 </div>
                 <div class="col-3"></div>
                 <div class="col-4">
-                    <div class="owl-carousel owl-theme">
+                    <!-- roti -->
+                    <div id="rotibin" class="owl-carousel owl-theme">
                         <div class="item">
                             <img src="./ROTI/1.png" class="img-fluid" onclick="iponi('./ROTI/1.png','img2')">
                         </div>
@@ -95,10 +136,42 @@
         </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
         <script>
-            $('.owl-carousel').owlCarousel({
+            $('#topingbin').owlCarousel({
                 loop: true,
                 margin: 10,
-                nav: false,
+                nav: true,
+                responsive: {
+                0: {
+                    items: 3
+                },
+                600: {
+                    items: 1
+                },
+                1000: {
+                    items: 3
+                }
+                }
+            })
+            $('#slaybin').owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: true,
+                responsive: {
+                0: {
+                    items: 3
+                },
+                600: {
+                    items: 1
+                },
+                1000: {
+                    items: 3
+                }
+                }
+            })
+            $('#rotibin').owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: true,
                 responsive: {
                 0: {
                     items: 3
