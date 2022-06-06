@@ -22,32 +22,8 @@
             margin-top: 10rem !important;
         }
 
-        .owl-nav {
-            margin-top: 10px;
-            text-align: center;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        .owl-nav [class*='owl-'] {
-            color: #FFF;
-            font-size: 14px;
-            margin: 5px;
-            padding: 4px 7px;
-            background: #D6D6D6;
-            display: inline-block;
-            cursor: pointer;
-            border-radius: 3px;
-        }
-
-        .owl-nav [class*='owl-']:hover {
-            background: #4DC7A0;
-            color: #FFF;
-            text-decoration: none;
-        }
-
-        .owl-nav .disabled {
-            opacity: 0.5;
-            cursor: default;
+        .proxbon {
+            height: 80vh;
         }
     </style>
 </head>
@@ -56,7 +32,7 @@
     <div style="margin: 1% 1% 1% 1%;">
         <div class="row">
             <div class="col-12 col-md-3">
-                <h3>silahkan Pilih Isian</h3>
+                <h3 data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">Pilih Selai</h3>
                 <div class="row owl-carousel owl-theme" id="hititemlist">
                     <div class="col-12 col-md-6 mb-2 item text-center" onclick="selt('binsel1')">
                         <div class="card" id="binsel1">
@@ -106,8 +82,8 @@
             </div>
             <div class="col-12 col-md-7 mb-5">
                 <div class="card row">
-                    <div class="col-12"
-                        style="background: url('./rotisobek6.jpg');background-repeat: no-repeat; background-size: contain; height: 250px; ">
+                    <div class="col-12" id="rotina"
+                        style="background: url('./rotisobek6.jpg');background-repeat: no-repeat; background-size: contain; min-height: 250px; ">
                         <div class="container d-flex justify-content-center">
                             <img class="mt-5" id="fastoping" src="./image-removebg-preview.png" height="100px"
                                 style="object-fit: scale-down; position: absolute;">
@@ -119,9 +95,11 @@
                 </div>
             </div>
             <div class="col-12 col-md-2">
-                <div class="row owl-carousel" id="lwp">
+                <h3 data-bs-toggle="tooltip" title="Silahkan Pilih Toping untuk Rotimu">Pilih Toping</h3>
+                </p>
+                <div class="row owl-carousel owl-carousel2" id="lwp">
                     <div class="col-12 col-md-12 item" onclick="topingpass('toping1')">
-                        <div class="card" id="toping1">
+                        <div class="card" id="toping1" data-bs-toggle="tooltip" title="Oreo adalah Toping yang renyah Untukmu">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Oreo-Two-Cookies.png/2560px-Oreo-Two-Cookies.png"
                                 height="100px" class="card-img-top" style="object-fit: scale-down;" id="toping1img">
                             <div class="card-body">
@@ -149,8 +127,12 @@
     <script>
         var nika = screen.availWidth
         if (nika >= 1000) {
+            document.getElementById('lwp').classList.toggle("owl-carousel2");
+            document.getElementById('lwp').classList.toggle("owl-carousel");
             document.getElementById('hititemlist').classList.toggle("owl-carousel");
             document.getElementById('fastoping').classList.toggle("mt-10");
+            document.getElementById('rotina').classList.toggle("proxbon");
+
 
         }
         function selt(id) {
@@ -172,18 +154,18 @@
             var hititem = document.getElementsByClassName("hitimg");
             for (let i = 0; i < hititem.length; i++) {
                 clawimg += `
-        <div class="col-4 mb-4 mt-4">
-          <img src="${hititem[i].src}" class="img-fluid rounded" height="100px">
-        </div>
-        `
+                <div class="col-4 mb-4 mt-4">
+                    <img src="${hititem[i].src}" class="img-fluid rounded" height="100px">
+                </div>
+                `
             }
             document.getElementById('itemshow').innerHTML = clawimg;
         }
-        var toping='none'
+        var toping = 'none'
         function topingpass(id) {
-            toping=document.getElementById(id+'value').value
-            var topingimg = document.getElementById(id+'img').src
-            document.getElementById('fastoping').src=topingimg
+            toping = document.getElementById(id + 'value').value
+            var topingimg = document.getElementById(id + 'img').src
+            document.getElementById('fastoping').src = topingimg
         }
 
     </script>
@@ -210,19 +192,19 @@
                 }
             }
         })
-        $('#lwp').owlCarousel({
+        $('.owl-carousel2').owlCarousel({
             loop: true,
             margin: 10,
             nav: true,
             responsive: {
                 0: {
-                    items: 3
+                    items: 2
                 },
                 600: {
-                    items: 1
+                    items: 2
                 },
                 1000: {
-                    items: 3
+                    items: 2
                 }
             }
         })
