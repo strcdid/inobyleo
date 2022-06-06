@@ -126,37 +126,43 @@
 
     <script>
         var nika = screen.availWidth
-        if (nika >= 1000) {
+        if (nika >= 700) {
             document.getElementById('lwp').classList.toggle("owl-carousel2");
             document.getElementById('lwp').classList.toggle("owl-carousel");
             document.getElementById('hititemlist').classList.toggle("owl-carousel");
             document.getElementById('fastoping').classList.toggle("mt-10");
             document.getElementById('rotina').classList.toggle("proxbon");
-
-
         }
+        var selainame=[];
+        var selaiimg=[];
         function selt(id) {
-            document.getElementById(id).classList.toggle("border");
-            document.getElementById(id).classList.toggle("border-info");
-            document.getElementById(id + 'value').classList.toggle("hitsel");
-            document.getElementById(id + 'img').classList.toggle("hitimg");
+            if (selainame.length<6) {
+                selainame.push(document.getElementById(id + 'value').value)
+                selaiimg.push(document.getElementById(id + 'img').src);                
+            }        
+            console.log(selainame,selaiimg,selainame.length,selaiimg.length);
             claw()
         }
         function hitall() {
             var rasa = []
-            var hititem = document.getElementsByClassName("hitsel");
+            var hititem = selainame
             for (let i = 0; i < hititem.length; i++) {
-                rasa[i] = hititem[i].value;
+                rasa[i] = hititem[i];
             }
+        }
+        function pwt(id) {
+            selaiimg.splice(id, 1);
+            selainame.splice(id, 1);
+            claw();
         }
         function claw() {
             var clawimg = ''
-            var hititem = document.getElementsByClassName("hitimg");
+            var hititem = selaiimg;
             for (let i = 0; i < hititem.length; i++) {
                 clawimg += `
                 <div class="col-4 mb-4 mt-4">
-                    <button type="button" class="btn-close" ></button>
-                    <img src="${hititem[i].src}" class="img-fluid rounded" height="100px">
+                    <button type="button" class="btn-close" onclick="pwt(${i})"></button>
+                    <img src="${hititem[i]}" class="img-fluid rounded" height="100px">
                 </div>
                 `
             }
