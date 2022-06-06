@@ -1,134 +1,179 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" />
-  </head>
-  <body>
+    <style>
+        .owl-nav {
+            text-align: center !important;
+            font-size: 25px;
+        }
+
+        .owl-nav {
+            margin-top: 10px;
+            text-align: center;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .owl-nav [class*='owl-'] {
+            color: #FFF;
+            font-size: 14px;
+            margin: 5px;
+            padding: 4px 7px;
+            background: #D6D6D6;
+            display: inline-block;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+
+        .owl-nav [class*='owl-']:hover {
+            background: #4DC7A0;
+            color: #FFF;
+            text-decoration: none;
+        }
+
+        .owl-nav .disabled {
+            opacity: 0.5;
+            cursor: default;
+        }
+    </style>
+</head>
+
+<body>
     <div style="margin: 1% 1% 1% 1%;">
-      <div class="row">
-        <div class="col-12 col-md-3">
-          <div class="row owl-carousel" id="hititemlist">
+        <div class="row">
+            <div class="col-12 col-md-3">
+                <div class="row owl-carousel" id="hititemlist">
 
-            <div class="col-12 col-md-6 mb-2 item" onclick="selt('binsel1')" >
-              <div class="card" id="binsel1">
-                <img src="https://asset-a.grid.id/crop/0x0:0x0/700x465/photo/2018/07/26/2573935534.jpg" height="100px" class="card-img-top" id="binsel1img">
-                <div class="card-body">
-                  <p class="card-title btn btn btn-outline-dark">Keju</p>
-                  <input type="hidden" id="binsel1value" value="Keju">
-                </div>
-              </div>
-            </div>
-            
-            <div class="col-12 col-md-6 mb-2 item" onclick="selt('binsel2')">
-              <div class="card" id="binsel2">
-                <img src="https://image-cdn.medkomtek.com/oHtYoRIXFrQWMsVy4LWNWhptDGg=/640x640/smart/klikdokter-media-buckets/medias/1908850/original/093898800_1518881955-Beda-Nutrisi-Cokelat-Hitam-dan-Cokelat-Putih-By-Africa-Studio-shutterstock.jpg" height="100px" class="card-img-top" id="binsel2img">
-                <div class="card-body">
-                  <p class="card-title btn btn btn-outline-dark">Cokelat</p>
-                  <input type="hidden" id="binsel2value" value="Cokelat">
-                </div>
-              </div>
-            </div>
+                    <div class="col-12 col-md-6 mb-2 item text-center" onclick="selt('binsel1')">
+                        <div class="card" id="binsel1">
+                            <img src="https://asset-a.grid.id/crop/0x0:0x0/700x465/photo/2018/07/26/2573935534.jpg"
+                                height="100px" class="card-img-top" id="binsel1img">
+                            <div class="card-body">
+                                <p class="card-title btn btn-outline-dark">Keju</p>
+                                <input type="hidden" id="binsel1value" value="Keju">
+                            </div>
+                        </div>
+                    </div>
 
-            <div class="col-12 col-md-6 mb-2 item" onclick="selt('binsel3')">
-              <div class="card" id="binsel3">
-                <img src="https://res.cloudinary.com/dk0z4ums3/image/upload/v1599015514/attached_image/manfaat-blueberry-untuk-kesehatan-ternyata-sangat-dahsyat.jpg" height="100px" class="card-img-top" id="binsel3img">
-                <div class="card-body">
-                  <p class="card-title btn btn btn-outline-dark">Blue Berry</p>
-                  <input type="hidden" id="binsel3value" value="Blue Berry">
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 mb-2 item" onclick="selt('binsel4')">
-              <div class="card" id="binsel4">
-                <img src="https://img.okezone.com/content/2018/03/06/298/1868687/tak-cuma-roti-ini-5-kombinasi-enak-dari-selai-kacang-yang-bisa-dicoba-k0pxOVwoGN.jpg" height="100px" class="card-img-top" id="binsel4img">
-                <div class="card-body">
-                  <p class="card-title btn btn btn-outline-dark">Kacang</p>
-                  <input type="hidden" id="binsel4value" value="Kacang">
-                </div>
-              </div>
-            </div>
+                    <div class="col-12 col-md-6 mb-2 item text-center" onclick="selt('binsel2')">
+                        <div class="card" id="binsel2">
+                            <img src="https://image-cdn.medkomtek.com/oHtYoRIXFrQWMsVy4LWNWhptDGg=/640x640/smart/klikdokter-media-buckets/medias/1908850/original/093898800_1518881955-Beda-Nutrisi-Cokelat-Hitam-dan-Cokelat-Putih-By-Africa-Studio-shutterstock.jpg"
+                                height="100px" class="card-img-top" id="binsel2img">
+                            <div class="card-body">
+                                <p class="card-title btn btn-outline-dark">Cokelat</p>
+                                <input type="hidden" id="binsel2value" value="Cokelat">
+                            </div>
+                        </div>
+                    </div>
 
-            
-          </div>
-        </div>
-        <script>
-          function selt(id) {
-            document.getElementById(id).classList.toggle("border");
-            document.getElementById(id).classList.toggle("border-info");
-            document.getElementById(id+'value').classList.toggle("hitsel");
-            document.getElementById(id+'img').classList.toggle("hitimg");
-            claw()
-          }
-          function hitall() {
-            var rasa=[]
-            var hititem=document.getElementsByClassName("hitsel");
-            for (let i = 0; i < hititem.length; i++) {
-              rasa[i] = hititem[i].value;
-            }
-          }
-        </script>
-        <div class="col-12 col-md-7">
-          <div class="row">
-            <div class="col-12" style="background: url('./rotisobek6.jpg');background-repeat: no-repeat; background-size: contain; height: 80vh; ">
-              <div class="row" id="itemshow">
+                    <div class="col-12 col-md-6 mb-2 item text-center" onclick="selt('binsel3')">
+                        <div class="card" id="binsel3">
+                            <img src="https://res.cloudinary.com/dk0z4ums3/image/upload/v1599015514/attached_image/manfaat-blueberry-untuk-kesehatan-ternyata-sangat-dahsyat.jpg"
+                                height="100px" class="card-img-top" id="binsel3img">
+                            <div class="card-body">
+                                <p class="card-title btn btn-outline-dark">Blue Berry</p>
+                                <input type="hidden" id="binsel3value" value="Blue Berry">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 mb-2 item text-center" onclick="selt('binsel4')">
+                        <div class="card" id="binsel4">
+                            <img src="https://img.okezone.com/content/2018/03/06/298/1868687/tak-cuma-roti-ini-5-kombinasi-enak-dari-selai-kacang-yang-bisa-dicoba-k0pxOVwoGN.jpg"
+                                height="100px" class="card-img-top" id="binsel4img">
+                            <div class="card-body">
+                                <p class="card-title btn btn-outline-dark">Kacang</p>
+                                <input type="hidden" id="binsel4value" value="Kacang">
+                            </div>
+                        </div>
+                    </div>
 
-              </div>
+
+                </div>
             </div>
-            <div class="col-12">
-              <div class="card">
-                <h1>Agustinus</h1>
-              </div>
+            <script>
+                function selt(id) {
+                    document.getElementById(id).classList.toggle("border");
+                    document.getElementById(id).classList.toggle("border-info");
+                    document.getElementById(id + 'value').classList.toggle("hitsel");
+                    document.getElementById(id + 'img').classList.toggle("hitimg");
+                    claw()
+                }
+                function hitall() {
+                    var rasa = []
+                    var hititem = document.getElementsByClassName("hitsel");
+                    for (let i = 0; i < hititem.length; i++) {
+                        rasa[i] = hititem[i].value;
+                    }
+                }
+            </script>
+            <div class="col-12 col-md-7">
+                <div class="row">
+                    <div class="col-12"
+                        style="background: url('./rotisobek6.jpg');background-repeat: no-repeat; background-size: contain; height: 80vh; ">
+                        <div class="row" id="itemshow">
+
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="card">
+                            <h1>Agustinus</h1>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <script>
-          function claw() {
-            var clawimg=''
-            var hititem=document.getElementsByClassName("hitimg");
-            for (let i = 0; i < hititem.length; i++) {
-              clawimg+=`
+            <script>
+                function claw() {
+                    var clawimg = ''
+                    var hititem = document.getElementsByClassName("hitimg");
+                    for (let i = 0; i < hititem.length; i++) {
+                        clawimg += `
                 <div class="col-4 mb-2 mt-2">
                   <img src="${hititem[i].src}" class="img-fluid rounded">
                 </div>
                 `
-            }
-            document.getElementById('itemshow').innerHTML=clawimg;
-          }
-        </script>
-        <div class="col-12 col-md-2"></div>
-      </div>
+                    }
+                    document.getElementById('itemshow').innerHTML = clawimg;
+                }
+            </script>
+            <div class="col-12 col-md-2"></div>
+        </div>
     </div>
     <!-- foot -->
     <script>
-        var nika=screen.availWidth
-        if (nika>=1000) {
-          document.getElementById('hititemlist').classList.toggle("owl-carousel");
+        var nika = screen.availWidth
+        if (nika >= 1000) {
+            document.getElementById('hititemlist').classList.toggle("owl-carousel");
         }
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script>
         $('.owl-carousel').owlCarousel({
-            loop:true,
-            margin:10,
-            nav:true,
-            responsive:{
-                0:{
-                    items:2
+            loop: true,
+            margin: 10,
+            nav: true,
+            responsive: {
+                0: {
+                    items: 2
                 },
-                600:{
-                    items:2
+                600: {
+                    items: 2
                 },
-                1000:{
-                    items:2
+                1000: {
+                    items: 2
                 }
             }
         })
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-  </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</body>
+
 </html>
