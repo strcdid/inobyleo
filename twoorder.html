@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" />
   </head>
   <body>
     <div style="margin: 1% 1% 1% 1%;">
       <div class="row">
         <div class="col-12 col-md-3">
-          <div class="row">
+          <div class="row owl-carousel" id="hititemlist">
 
-            <div class="col-6 mb-2" onclick="selt('binsel1')" >
+            <div class="col-12 col-md-6 mb-2 item" onclick="selt('binsel1')" >
               <div class="card" id="binsel1">
                 <img src="https://asset-a.grid.id/crop/0x0:0x0/700x465/photo/2018/07/26/2573935534.jpg" height="100px" class="card-img-top" id="binsel1img">
                 <div class="card-body">
@@ -22,7 +23,7 @@
               </div>
             </div>
             
-            <div class="col-6 mb-2" onclick="selt('binsel2')">
+            <div class="col-12 col-md-6 mb-2 item" onclick="selt('binsel2')">
               <div class="card" id="binsel2">
                 <img src="https://image-cdn.medkomtek.com/oHtYoRIXFrQWMsVy4LWNWhptDGg=/640x640/smart/klikdokter-media-buckets/medias/1908850/original/093898800_1518881955-Beda-Nutrisi-Cokelat-Hitam-dan-Cokelat-Putih-By-Africa-Studio-shutterstock.jpg" height="100px" class="card-img-top" id="binsel2img">
                 <div class="card-body">
@@ -32,7 +33,7 @@
               </div>
             </div>
 
-            <div class="col-6 mb-2" onclick="selt('binsel3')">
+            <div class="col-12 col-md-6 mb-2 item" onclick="selt('binsel3')">
               <div class="card" id="binsel3">
                 <img src="https://res.cloudinary.com/dk0z4ums3/image/upload/v1599015514/attached_image/manfaat-blueberry-untuk-kesehatan-ternyata-sangat-dahsyat.jpg" height="100px" class="card-img-top" id="binsel3img">
                 <div class="card-body">
@@ -42,7 +43,7 @@
               </div>
             </div>
 
-            <div class="col-6 mb-2" onclick="selt('binsel4')">
+            <div class="col-12 col-md-6 mb-2 item" onclick="selt('binsel4')">
               <div class="card" id="binsel4">
                 <img src="https://img.okezone.com/content/2018/03/06/298/1868687/tak-cuma-roti-ini-5-kombinasi-enak-dari-selai-kacang-yang-bisa-dicoba-k0pxOVwoGN.jpg" height="100px" class="card-img-top" id="binsel4img">
                 <div class="card-body">
@@ -102,6 +103,33 @@
         <div class="col-12 col-md-2"></div>
       </div>
     </div>
+    <!-- foot -->
+    <script>
+        var nika=screen.availWidth
+        if (nika>=1000) {
+          document.getElementById('hititemlist').classList.toggle("owl-carousel");
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+        $('.owl-carousel').owlCarousel({
+            loop:true,
+            margin:10,
+            nav:false,
+            responsive:{
+                0:{
+                    items:2
+                },
+                600:{
+                    items:2
+                },
+                1000:{
+                    items:2
+                }
+            }
+        })
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
   </body>
 </html>
