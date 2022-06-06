@@ -120,7 +120,7 @@
             </div>
             <div class="col-12 col-md-2">
                 <div class="row owl-carousel" id="lwp">
-                    <div class="col-12 col-md-12 item">
+                    <div class="col-12 col-md-12 item" onclick="topingpass('toping1')">
                         <div class="card" id="toping1">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Oreo-Two-Cookies.png/2560px-Oreo-Two-Cookies.png"
                                 height="100px" class="card-img-top" style="object-fit: scale-down;" id="toping1img">
@@ -130,7 +130,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-12 item">
+                    <div class="col-12 col-md-12 item" onclick="topingpass('toping2')">
                         <div class="card" id="toping2">
                             <img src="./image-removebg-preview.png" height="100px" class="card-img-top"
                                 style="object-fit: scale-down;" id="toping2img">
@@ -179,6 +179,13 @@
             }
             document.getElementById('itemshow').innerHTML = clawimg;
         }
+        var toping='none'
+        function topingpass(id) {
+            toping=document.getElementById(id+'value').value
+            var topingimg = document.getElementById(id+'img').src
+            document.getElementById('fastoping').src=topingimg
+        }
+
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
